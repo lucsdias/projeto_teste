@@ -1,0 +1,181 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="margin: auto;">
+      <ion-img
+        class="logo-header"
+        src="../../assets/header/logo_branca.png"
+      ></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-img
+        class="logo-header"
+        src="../../assets/header/logo_branca.png"
+      ></ion-img>
+    </ion-toolbar>
+  </ion-header>
+  <div *ngIf="mostrarConteudo === '1'">
+    <h2>Buscar por:</h2>
+    <div (click)="atualizarMostrarConteudo('2')">
+      <div class="card-busca" >
+        <p>Artista</p>
+        <ion-icon class="ion-icon" name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+
+    <div (click)="atualizarMostrarConteudo('3')">
+      <div class="card-busca" >
+        <p>Culturas</p>
+        <ion-icon class="ion-icon" name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+
+    <div (click)="atualizarMostrarConteudo('4')">
+      <div class="card-busca" >
+        <p>Título</p>
+        <ion-icon class="ion-icon" name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+
+    <div (click)="atualizarMostrarConteudo('5')">
+      <div class="card-busca" >
+        <p>Categorias</p>
+        <ion-icon class="ion-icon" name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+  
+ <!--Paginas--> 
+  <ion-content>
+    <div class="content" *ngIf="mostrarConteudo === '2'">
+      <div>
+        <div class="voltar">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+          <p class="link" (click)="atualizarMostrarConteudo('1')">Voltar</p>
+        </div>
+        <h2>Artistas</h2>
+        <div class="searchbar">
+          <ion-searchbar 
+            color="primary-contrast" 
+            [(ngModel)]="busca" 
+            (ionInput)="onSearch($event)" 
+            placeholder="Digite o nome do artista">
+          </ion-searchbar>
+        </div>
+      </div>
+  
+      <ion-card *ngFor="let arte of artes">
+        <img class="img" alt="Silhouette of mountains" src="{{arte.primaryimageurl}}" />
+        <ion-card-header>
+          <ion-card-title>{{arte.title}}</ion-card-title>
+          <ion-card-subtitle></ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{arte.creditline}}
+        </ion-card-content>
+      </ion-card>
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Carregando mais dados...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  
+    <div class="content" *ngIf="mostrarConteudo === '3'">
+      <div>
+        <div class="voltar">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+          <p class="link" (click)="atualizarMostrarConteudo('1')">Voltar</p>
+        </div>
+        <h2>Culturas</h2>
+        <div class="searchbar">
+          <ion-searchbar 
+            color="primary-contrast" 
+            [(ngModel)]="busca" 
+            (ionInput)="onSearch($event)" 
+            placeholder="Digite a data">
+          </ion-searchbar>
+        </div>
+      </div>
+  
+      <ion-card *ngFor="let arte of artes">
+        <img class="img" alt="Silhouette of mountains" src="{{arte.primaryimageurl}}" />
+        <ion-card-header>
+          <ion-card-title>{{arte.title}}</ion-card-title>
+          <ion-card-subtitle></ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{arte.creditline}}
+        </ion-card-content>
+      </ion-card>
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Carregando mais dados...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  
+    <div class="content" *ngIf="mostrarConteudo === '4'">
+      <div>
+        <div class="voltar">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+          <p class="link" (click)="atualizarMostrarConteudo('1')">Voltar</p>
+        </div>
+        <h2>Título</h2>
+        <div class="searchbar">
+          <ion-searchbar 
+            color="primary-contrast" 
+            [(ngModel)]="busca" 
+            (ionInput)="onSearch($event)" 
+            placeholder="Digite o título">
+          </ion-searchbar>
+        </div>
+      </div>
+  
+      <ion-card *ngFor="let arte of artes">
+        <img class="img" alt="Silhouette of mountains" src="{{arte.primaryimageurl}}" />
+        <ion-card-header>
+          <ion-card-title>{{arte.title}}</ion-card-title>
+          <ion-card-subtitle></ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{arte.creditline}}
+        </ion-card-content>
+      </ion-card>
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Carregando mais dados...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  
+    <div class="content" *ngIf="mostrarConteudo === '5'">
+      <div>
+        <div class="voltar">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+          <p class="link" (click)="atualizarMostrarConteudo('1')">Voltar</p>
+        </div>
+        <h2>Categorias</h2>
+        <div class="searchbar">
+          <ion-searchbar 
+            color="primary-contrast" 
+            [(ngModel)]="busca" 
+            (ionInput)="onSearch($event)" 
+            placeholder="Digite a categoria">
+          </ion-searchbar>
+        </div>
+      </div>
+  
+      <ion-card *ngFor="let arte of artes">
+        <img class="img" alt="Silhouette of mountains" src="{{arte.primaryimageurl}}" />
+        <ion-card-header>
+          <ion-card-title>{{arte.title}}</ion-card-title>
+          <ion-card-subtitle></ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{arte.creditline}}
+        </ion-card-content>
+      </ion-card>
+    </div>
+  
+
+</ion-content>

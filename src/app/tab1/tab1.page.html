@@ -1,0 +1,125 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="margin: auto;">
+      <ion-img
+        class="logo-header"
+        src="../../assets/header/logo_branca.png"
+      ></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-img
+        class="logo-header"
+        src="../../assets/header/logo_branca.png"
+      ></ion-img>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-text>
+    <h2>Artistas mais procurados</h2>
+  </ion-text>
+  
+  <swiper-container [slidesPerView]="2">
+    <swiper-slide>
+      <ion-router-link href="tabs/tab2?mostrar=2&busca=Vincent van Gogh">
+        <ion-img class="img-swiper" src="../../assets/erick.jpg"></ion-img>
+        <div class="txt-swiper">Vincent Van Gogh</div>
+      </ion-router-link>
+    </swiper-slide>
+    <swiper-slide>
+      <ion-router-link href="tabs/tab2?mostrar=2&busca=Leonardo da Vinci">
+        <ion-img class="img-swiper" src="../../assets/erick.jpg"></ion-img>
+        <div class="txt-swiper">Leonardo da Vinci</div>
+      </ion-router-link>
+    </swiper-slide>
+    <swiper-slide>
+      <ion-router-link href="tabs/tab2?mostrar=2&busca=Rembrandt">
+        <ion-img class="img-swiper" src="../../assets/erick.jpg"></ion-img>
+        <div class="txt-swiper">Rembrandt </div>
+      </ion-router-link>
+    </swiper-slide>
+    <swiper-slide>
+      <ion-router-link href="tabs/tab2?mostrar=2&busca=John Singer Sargent ">
+        <ion-img class="img-swiper" src="../../assets/erick.jpg"></ion-img>
+        <div class="txt-swiper">John Singer Sargent </div>
+      </ion-router-link>
+    </swiper-slide>
+  </swiper-container>
+  
+  <ion-text>
+    <h2>Procure por Culturas</h2>
+  </ion-text>
+  <ion-router-link href="tabs/tab2?mostrar=3&busca=African">
+    <swiper-container [slidesPerView]="2">
+      <swiper-slide>
+        <ion-img class="img-swiper" src="../../assets/erick.jpg"></ion-img>
+        <div class="txt-swiper">Africana</div>
+      </swiper-slide>
+      <swiper-slide>
+    <ion-router-link href="tabs/tab2?mostrar=3&busca=Italian">
+        <ion-img class="img-swiper" src="../../assets/erick.jpg"></ion-img>
+        <div class="txt-swiper">Italiana</div>
+      </ion-router-link>
+      </swiper-slide>
+      <swiper-slide>
+        <ion-router-link href="tabs/tab2?mostrar=3&busca=Japanese">
+        <ion-img class="img-swiper" src="../../assets/erick.jpg"></ion-img>
+        <div class="txt-swiper">Japonesa</div>
+        </ion-router-link>
+      </swiper-slide>
+      <swiper-slide>
+        <ion-router-link href="tabs/tab2?mostrar=3&busca=Chinese">
+        <ion-img class="img-swiper" src="../../assets/erick.jpg"></ion-img>
+        <div class="txt-swiper">Chinesa</div>
+        </ion-router-link>
+      </swiper-slide>
+    </swiper-container>
+    <!-- <ion-button tab="tab2">Datas</ion-button> -->
+  </ion-router-link>
+
+  <ion-text>
+    <h2>Procure por categorias</h2>
+  </ion-text>
+  <ion-router-link href="tabs/tab2?mostrar=5&busca=Mosaic">
+    <swiper-container [slidesPerView]="2">
+      <swiper-slide>
+        <ion-img class="img-swiper" src="../../assets/erick.jpg"></ion-img>
+        <div class="txt-swiper">Mosaicos</div>
+      </swiper-slide>
+      <swiper-slide>
+        <ion-router-link href="tabs/tab2?mostrar=5&busca=Sculpture">
+        <ion-img class="img-swiper" src="../../assets/erick.jpg"></ion-img>
+        <div class="txt-swiper">Esculturas</div>
+        </ion-router-link>
+      </swiper-slide>
+      <swiper-slide>
+        <ion-router-link href="tabs/tab2?mostrar=5&busca=Mirrors">
+        <ion-img class="img-swiper" src="../../assets/erick.jpg"></ion-img>
+        <div class="txt-swiper">Espelhos</div>
+        </ion-router-link>
+      </swiper-slide>
+      <swiper-slide>
+        <ion-router-link href="tabs/tab2?mostrar=5&busca=Coins">
+        <ion-img class="img-swiper" src="../../assets/erick.jpg"></ion-img>
+        <div class="txt-swiper">Moedas</div>
+        </ion-router-link>
+      </swiper-slide>
+    </swiper-container>
+    <!-- <ion-button tab="tab2">Categorias</ion-button> -->
+  </ion-router-link>
+  <ion-text>
+    <h2>Conheça o museu</h2>
+  </ion-text>
+  
+  <iframe
+    width="100%"
+    height="320"
+    src="https://player.vimeo.com/video/52099684?h=9062d517c4&title=0&byline=0&portrait=0"
+    frameborder="0"
+    allowfullscreen
+    allowtransparency="true"
+  ></iframe>
+
+</ion-content>
